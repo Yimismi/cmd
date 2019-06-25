@@ -18,12 +18,19 @@ type LangTmpl struct {
 	GenImports func([]*core.Table) map[string]string
 }
 
+type MetadataGetter struct {
+	Get func(string) ([]*core.Table, error)
+}
+
 var (
 	mapper    = &core.SnakeMapper{}
 	langTmpls = map[string]LangTmpl{
 		"go":   GoLangTmpl,
 		"c++":  CPlusTmpl,
 		"objc": ObjcTmpl,
+	}
+	metadataGetters = map[string]MetadataGetter{
+		"mysql": MysqlGetter,
 	}
 )
 

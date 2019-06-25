@@ -52,6 +52,7 @@ sqlite:
 
 mysql:
 `xorm reverse mysql root:@/xorm_test?charset=utf8 templates/goxorm`
+`xorm reverse -c mysql create.sql templates/goxorm`
 
 mymysql:
 `xorm reverse mymysql xorm_test2/root/ templates/goxorm`
